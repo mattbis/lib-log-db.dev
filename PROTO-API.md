@@ -13,7 +13,7 @@
 ### constructor
 - todo lang
 
-### config
+### config / note you can use args or shortcuts... 
 - `ltl.config()`
 - `ltl.config('logger.path')('/home/myspecialuser/evt.log')` - defaults to `/var/somewhere i forgot/ltl/logs/evt.log`
 
