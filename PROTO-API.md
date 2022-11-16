@@ -53,8 +53,8 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `can.os.dirs` - dont use any os stuff just use memmmmmmoooorry
 - `can.os.test` - dont use os test methods for operations...
 - `must.strict` - will sanify and stop if anything goes wrong.. 0 means forgive a bit
-- `must.fatal` - you can forgive, but if a fatal happens exit... 
-- `must.verify` - it will check every operation again...  in both places...
+- `must.fatal` - you can forgive, but if a fatal happens exit... will stop earlier than forgive
+- `debug.verify` - it will check every operation again...  in both places..
 - `must.user` - use hash and user and os only + eth mac addresss
 - `must.sanify` - the message is checked for weird stuff
 - `must.sparse` - dont reuse any nodes.. 
