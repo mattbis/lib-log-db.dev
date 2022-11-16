@@ -1,6 +1,6 @@
 - now to actually implement this )) erm what langauge.. im thinking go for now .. since the other projects are already really hard to think about.. but im kinda writing it like Python... interesting.. maybe I could use cosmo and python or go and python and this will be a part of msmeo..  
 
-- todo tomorrow instead last is parity yes .. but a parity diff to the last store which is better.. 
+- todo tomorrow instead last is parity yes .. but a parity diff to the last store which is better.. + we can have a ghost tail gate which is part of verify... 
 
 # all
 - the order of calls determines what happens... it just does the min expected. to script it means using op_seq()
