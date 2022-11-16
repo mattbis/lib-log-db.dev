@@ -361,6 +361,7 @@ its bothering me ... maybe i want
 - `ltl.emit()`
 - `ltl.broadcast()`
 - `ltl.stream()`
+- `ltl.Server()`
 
 - unsure what language im using .. 
 
