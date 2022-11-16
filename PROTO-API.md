@@ -58,7 +58,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `must.user` - use hash and user and os only + eth mac addresss
 - `must.sanify` - the message is checked for weird stuff
 - `must.sparse` - dont reuse any nodes.. 
-- `must.protected` - dont use shared memory
+- `must.protected` - dont use shared memory ( its not really aimed at these things but singular usages on safe machines.. )
 - `can.disk` - you cant have both 0 <== only use for testing - since very dangerous
 - `can.ram` - this means it wont use any buffer but minimum and will be very very slow....  todo later on you can give a finite for whatever system to run on .
 - `must.os`
