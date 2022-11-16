@@ -51,7 +51,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `must.user` - use hash and user and os only + eth mac addresss
 - `must.sanify` - the message is checked for weird stuff
 - `can.disk` - you cant have both 0
-- `can.ram`
+- `can.ram` - this means it wont use any buffer but minimum and will be very very slow....  todo later on you can give a finite for whatever system to run on .
 - `must.os`
 - `must.wait.[op_code]` - this is due to some systems not being usual or disks or whatever, etc.... 
 
