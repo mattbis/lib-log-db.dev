@@ -91,7 +91,20 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 
 #### index ==>
 - `ltl.seek(ltl._CACHE)`
+ 
 - `ltl.defaults(ltl._TOPIC)`
+
+- `ltl.index(ltl.DEFAULT_FILTERS)`
+- `ltl.index({prop_match,val_match,int_match})`
+
+- `ltl.lookup()` - util method for below
+- `ltl.filter()` - create or get ( pre cache some struct )
+
+- `ltl.one(symMANIFEST|symDATA, filter)` --> also ltl.verify()
+- `ltl.range(..)`
+- `ltl.some(..)`
+
+- `ltl.raw(..)`
 
 ### protected api - debugging - dev
 - `ltl.dangerously_flush_queue()`
@@ -151,16 +164,6 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.idled()`
 
 - `ltl.pending()` ==> `[pending_op_codes]`
-
-- `ltl.index(ltl.DEFAULT_FILTERS)`
-- `ltl.index({prop_match,val_match,int_match})`
-
-- `ltl.lookup()` - util method for below
-- `ltl.filter()` - create or get ( pre cache some struct )
-
-- `ltl.one(symMANIFEST|symDATA, filter)` --> also ltl.verify()
-- `ltl.range(..)`
-- `ltl.some(..)`
 
 - `ltl.export()` supported formats...
 
@@ -266,6 +269,7 @@ its bothering me ... maybe i want
   - `ltl.run`
   - `ltl.DEFAULTS`
   - `ltl.user`
+  - `ltl.index`
 - `ltl.aimpl` 
   - use abstract instead and do weird stuff -- its likely a bit will be here if i dont have time..
 - `ltl.impl`
@@ -284,6 +288,7 @@ its bothering me ... maybe i want
   - `ltl.Impl.Defaults
   - `ltl.Impl.User` -> this is the default way to identify you
   - `ltl.Impl.DB`
+  - `ltl.Impl.Index`
 ### Static
 - `ltl.msg`
   - `ltl.msg(key|code|hash|static).key()`
