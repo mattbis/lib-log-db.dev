@@ -259,10 +259,11 @@ its bothering me ... maybe i want
   - `ltl.warn`
   - `ltl.run`
   - `ltl.DEFAULTS`
+  - `ltl.user`
 - `ltl.aimpl` 
   - use abstract instead and do weird stuff -- its likely a bit will be here if i dont have time..
 - `ltl.impl`
-  - directly insert whatever
+  - directly insert whatever - this is much faster than user .hook() or events.. 
 ### Impl
 - `ltl.Impl`
   - `ltl.Impl.OP_CODES`
@@ -274,6 +275,7 @@ its bothering me ... maybe i want
   - `ltl.Impl.OP.__mandatory` -> ensure integrity
   - `ltl.Impl.Runner` - build
   - `ltl.Impl.Defaults
+  - `ltl.Impl.User` -> this is the default way to identify you
 ### Static
 - `ltl.msg`
   - `ltl.msg(key|code|hash|static).key()`
@@ -314,6 +316,7 @@ its bothering me ... maybe i want
 - `ltl.emittable()`
 - `ltl.emit()`
 - `ltl.broadcast()`
+- `ltl.stream()`
 
 - unsure what language im using .. 
 
