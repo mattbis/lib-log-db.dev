@@ -306,7 +306,7 @@ its bothering me ... maybe i want
   - `ltl.Impl.Server`
   - `ltl.Impl.OP.__mandatory` -> ensure integrity
   - `ltl.Impl.Runner` - build
-  - `ltl.Impl.Defaults
+  - `ltl.Impl.Defaults`
   - `ltl.Impl.User` -> this is the default way to identify you
   - `ltl.Impl.DB`
   - `ltl.Impl.Index`
