@@ -261,6 +261,9 @@ its bothering me ... maybe i want
 
 ### dimpl
 - `ltl.dimpl`
+  - `ltl.pq`
+  - `ltl.hq`
+  - `ltl.rq`
   - `ltl.msg`
   - `ltl.OP.*`
   - `ltl.db`
@@ -278,6 +281,7 @@ its bothering me ... maybe i want
   - `ltl.DEFAULTS`
   - `ltl.user`
   - `ltl.index`
+  - `ltl.os.integrity()` -> checks we have dispace etc and whatever else... you can call it it will queue itself
 - `ltl.aimpl` 
   - use abstract instead and do weird stuff -- its likely a bit will be here if i dont have time..
 - `ltl.impl`
@@ -297,6 +301,10 @@ its bothering me ... maybe i want
   - `ltl.Impl.User` -> this is the default way to identify you
   - `ltl.Impl.DB`
   - `ltl.Impl.Index`
+  - `ltl.Impl.OS`
+  - `ltl.Impl.HQ`
+  - `ltl.Impl.PQ`
+  - `ltl.Impl.RQ`
 ### Static
 - `ltl.msg`
   - `ltl.msg(key|code|hash|static).key()`
