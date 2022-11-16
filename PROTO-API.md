@@ -251,6 +251,7 @@ its bothering me ... maybe i want
 - `ltl.dimpl`
   - `ltl.msg`
   - `ltl.OP.*`
+  - `ltl.db`
   - `ltl.emitter`
   - `ltl.Envelope`
   - `ltl.Message`
@@ -267,6 +268,7 @@ its bothering me ... maybe i want
 - `ltl.aimpl` 
   - use abstract instead and do weird stuff -- its likely a bit will be here if i dont have time..
 - `ltl.impl`
+  - `ltl.db.matt` - simple db
   - directly insert whatever - this is much faster than user .hook() or events.. 
 ### Impl
 - `ltl.Impl`
