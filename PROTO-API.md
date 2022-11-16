@@ -330,6 +330,9 @@ its bothering me ... maybe i want
 - `ltl.error_codes()`
 - ?`ltl.cores(Int)`
 - ?`ltl.threads(Int)`
+- `ltl.OS_VALIDATOR.testPath()`
+- `ltl.OS_VALIDATOR.testExecution()`
+- `ltl.OS_VALIDATOR.testSubProcess()`
 
 #### dynamic library hooking - use above in code
 - `ltl.hookable()`
