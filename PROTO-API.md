@@ -1,3 +1,5 @@
+# lib13891u3891u398u3
+
 - now to actually implement this )) erm what langauge.. im thinking go for now .. since the other projects are already really hard to think about.. but im kinda writing it like Python... interesting.. maybe I could use cosmo and python or go and python and this will be a part of msmeo..  
 
 - todo tomorrow instead last is parity yes .. but a parity diff to the last store which is better.. + we can have a ghost tail gate which is part of verify... 
@@ -311,9 +313,9 @@ its bothering me ... maybe i want
   - `ltl.Impl.DB`
   - `ltl.Impl.Index`
   - `ltl.Impl.OS`
-  - `ltl.Impl.HQ`
-  - `ltl.Impl.PQ`
-  - `ltl.Impl.RQ`
+  - `ltl.Impl.HQ` - evt queue
+  - `ltl.Impl.PQ` - op queue
+  - `ltl.Impl.RQ` - runner queue
 ### Static
 - `ltl.msg`
   - `ltl.msg(key|code|hash|static).key()`
