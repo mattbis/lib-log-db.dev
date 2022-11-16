@@ -34,6 +34,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `logger.signals.path`
 - `logger.op.path`
 - `logger.server.path`
+- `should.integrity` - set this to reduce the frequency of integrity operations ( like a friendly command line switch ie.. --paranoid --okay ) etc
 - `integrity.op.path` - this will dump the operation before it tries it etc - but default None
 - `integrity.before.path` - setting this enables it ... probably
 - `integrity.last.path`
