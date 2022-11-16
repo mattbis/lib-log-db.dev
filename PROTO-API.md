@@ -85,6 +85,9 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 ##### index
 - defaults: bigInts, hashes ( its not the silly )
 
+#### message
+- can be anything... 
+
 ### private api
 
 - `ltl.sanify()` its possible weird chars
@@ -113,7 +116,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 
 - `ltl.raw(..)`
 
-- `ltl.flush(..)
+- `ltl.flush(..)`
 
 ### protected api - debugging - dev
 - `ltl.dangerously_flush_queue()`
