@@ -282,6 +282,7 @@ its bothering me ... maybe i want
   - `ltl.Impl.Runner` - build
   - `ltl.Impl.Defaults
   - `ltl.Impl.User` -> this is the default way to identify you
+  - `ltl.Impl.DB`
 ### Static
 - `ltl.msg`
   - `ltl.msg(key|code|hash|static).key()`
