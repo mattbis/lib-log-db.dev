@@ -1,5 +1,7 @@
 - now to actually implement this )) erm what langauge.. im thinking go for now .. since the other projects are already really hard to think about.. but im kinda writing it like Python... interesting.. maybe I could use cosmo and python or go and python and this will be a part of msmeo..  
 
+- todo tomorrow instead last is parity yes .. but a parity diff to the last store which is better.. 
+
 ## cli
 ### exit codes
 - todo
