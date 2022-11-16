@@ -4,7 +4,7 @@
 
 # all
 - the order of calls determines what happens... it just does the min expected. to script it means using op_seq()
-- since im using htis one way for the moment is like this.. 
+- since im using htis one way for the moment is like this.. ( in some places auto behaviour ) 
 
 ## cli
 ### exit codes
