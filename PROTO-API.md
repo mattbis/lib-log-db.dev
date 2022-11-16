@@ -98,6 +98,9 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.cache()`
   - `ltl.cache_frags(_,_,pr)`
 
+#### cell ==>
+.. + parity for tmrw
+
 #### index ==>
 - `ltl.seek(ltl._CACHE)`
  
