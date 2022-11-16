@@ -53,7 +53,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `must.verify` - it will check every operation again...  in both places...
 - `must.user` - use hash and user and os only + eth mac addresss
 - `must.sanify` - the message is checked for weird stuff
-- `must.sparse` - dont reuse any cells.. 
+- `must.sparse` - dont reuse any nodes.. 
 - `can.disk` - you cant have both 0 <== only use for testing - since very dangerous
 - `can.ram` - this means it wont use any buffer but minimum and will be very very slow....  todo later on you can give a finite for whatever system to run on .
 - `must.os`
@@ -98,7 +98,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.cache()`
   - `ltl.cache_frags(_,_,pr)`
 
-#### cell ==>
+#### nodes ==>
 .. + parity for tmrw
 
 #### index ==>
