@@ -2,6 +2,10 @@
 
 - todo tomorrow instead last is parity yes .. but a parity diff to the last store which is better.. 
 
+# all
+- the order of calls determines what happens... it just does the min expected. to script it means using op_seq()
+- since im using htis one way for the moment is like this.. 
+
 ## cli
 ### exit codes
 - todo
