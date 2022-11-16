@@ -41,6 +41,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `manifests.path`
 - `scratch.path` - this is due to the manifest envelope, and whatever is being written .. although it will chunk it. its teh queue path...
 - `can.index`
+- `can.reserve`
 - `can.setup`
 - `can.install`
 - `can.args` - no args work whatsoever
@@ -89,10 +90,14 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.integrity_check()` this blocks and might be called - always on startup
 - `ltl.hook(symAppend,({data}) => ltl.OP[copy](last, data)`
 
+- `ltl.cache()`
+  - `ltl.cache_frags(_,_,pr)`
+
 #### index ==>
 - `ltl.seek(ltl._CACHE)`
  
 - `ltl.defaults(ltl._TOPIC)`
+- `ltl.reserve(ltl._CACHE)`
 
 - `ltl.index(ltl.DEFAULT_FILTERS)`
 - `ltl.index({prop_match,val_match,int_match})`
@@ -105,6 +110,8 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.some(..)`
 
 - `ltl.raw(..)`
+
+- `ltl.flush(..)
 
 ### protected api - debugging - dev
 - `ltl.dangerously_flush_queue()`
@@ -131,6 +138,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.symIDLE`
 - `ltl.symHARD_LOCK`
 - `ltl.symSOFT_LOCK`
+- `ltl.symPARITY`
 
 - `ltl.symNONE` - you can use this to just write a test envelope/message or wherever its the same as `_`
 - `ltl._` - this means partial for some thing... if you need it
@@ -299,6 +307,7 @@ its bothering me ... maybe i want
 - `ltl.types()`
 - `ltl.help()`
 - `ltl.status()`
+- `ltl.caches()`
 - `ltl.read()`
 - `ltl.run()`
 - `ltl.running()`
