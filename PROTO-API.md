@@ -297,6 +297,8 @@ its bothering me ... maybe i want
   - `ltl.user`
   - `ltl.index`
   - `ltl.os.integrity()` -> checks we have dispace etc and whatever else... you can call it it will queue itself
+  - `ltl.os.net()`
+  - `ltl.os.net.uu-mac-id()`
 - `ltl.aimpl` 
   - use abstract instead and do weird stuff -- its likely a bit will be here if i dont have time..
 - `ltl.impl`
@@ -317,6 +319,7 @@ its bothering me ... maybe i want
   - `ltl.Impl.DB`
   - `ltl.Impl.Index`
   - `ltl.Impl.OS`
+  - `ltl.Impl.net`
   - `ltl.Impl.HQ` - evt queue
   - `ltl.Impl.PQ` - op queue
   - `ltl.Impl.RQ` - runner queue
@@ -333,6 +336,8 @@ its bothering me ... maybe i want
 - `ltl.caches()`
 - `ltl.read()`
 - `ltl.run()`
+- `ltl.net()` - uu-mac-id
+- `ltl.interfaces()`
 - `ltl.running()`
 - `ltl.op(CODE)` call one operation 
 - `ltl.ops()` ==> codes()
