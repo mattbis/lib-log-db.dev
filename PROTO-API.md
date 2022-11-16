@@ -25,6 +25,7 @@ or config
 
 - `force-all.path` - contain it in one place ... `/opt/ltl` - if not its Null
 evt is the base logger of the server, process.. whatever you do it will write.. unless it cant.
+- `limit.nodes` - .. tmrw
 - `root.logger.evt.path` - set before running if want custom.. but this log is small....
 - `args.verbose` | defaults.verbose - cli messages
 - `args.debug` | defaults.debug - cli messages
