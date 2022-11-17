@@ -45,7 +45,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `scratch.path` - this is due to the manifest envelope, and whatever is being written .. although it will chunk it. its teh queue path...
 - `can.fork` - cluster
 - `can.index`
-- `can.reserve`
+- `can.reserve` - effectively controls caching and indexes... 
 - `can.setup`
 - `can.install`
 - `can.serve`
