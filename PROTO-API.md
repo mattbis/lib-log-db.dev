@@ -38,6 +38,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `logger.op.path`
 - `logger.server.path`
 - `should.integrity` - set this to reduce the frequency of integrity operations ( like a friendly command line switch ie.. --paranoid --okay ) etc
+- `should.os-test` - stop it doing this if a retry happens - instead forcing a fail
 - `integrity.op.path` - this will dump the operation before it tries it etc - but default None
 - `integrity.dump.before.path` - setting this enables it ... probably - dont enable this 
 - `integrity.dump.last.path` - dont enable this
@@ -353,9 +354,12 @@ its bothering me ... maybe i want
 - `ltl.error_codes()`
 - ?`ltl.cores(Int)`
 - ?`ltl.threads(Int)`
+##### these are micro tasks ... 
 - `ltl.OS_VALIDATOR.testPath()`
 - `ltl.OS_VALIDATOR.testExecution()`
 - `ltl.OS_VALIDATOR.testSubProcess()`
+- `ltl.OS_VALIDATOR.testPermissions()`
+- `ltl.OS_VALIDATOR.testUser()`
 
 #### dynamic library hooking - use above in code
 - `ltl.hookable()`
