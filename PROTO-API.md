@@ -29,6 +29,9 @@ or config
 evt is the base logger of the server, process.. whatever you do it will write.. unless it cant.
 - `limit.nodes` - .. tmrw
 - `root.logger.evt.path` - set before running if want custom.. but this log is small....
+- `root.heap.path`
+- `root.dump.path`
+- `root.crash_pad_handler.path`
 - `args.verbose` | defaults.verbose - cli messages
 - `args.debug` | defaults.debug - cli messages
 - `op.queue.disk.path` | defaults var root... 
