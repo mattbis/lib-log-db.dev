@@ -76,7 +76,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.DEFAULT_APPEND_OPTIONS`
   - { ?append_interval: 2[0|pms|pn|pt|po|ms] }
 - `ltl.BUILD_MANIFEST`
-  - { version, semver_version, builder, machine, date, priv_key_flag, repo_key_flag, options, flags, ltl_build_flags, ltl_build_headers_hash, build_hash, build_os, build_n, build_s }
+  - { version, semver_version, number, builder, machine, date, priv_key_flag, repo_key_flag, options, flags, ltl_build_flags, ltl_build_headers_hash, build_hash, build_os, build_n, build_s }
 - `ltl.DEFAULT_ENVELOPE`
   --> `{v:'', sys_v:'',dw:'',user:'',machine:'',?pid,?path,?process,?std_in_last,?std_in_range,?std_error}`
 - `ltl.DEFAULT_MANIFEST`
