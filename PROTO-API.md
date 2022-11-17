@@ -4,6 +4,8 @@
 
 - todo tomorrow instead last is parity yes .. but a parity diff to the last store which is better.. + we can have a ghost tail gate which is part of verify... 
 
+- its time to consolidate now the api has stuff a wrapper does and the core does in one. its best to split it.
+
 # all
 - the order of calls determines what happens... it just does the min expected. to script it means using op_seq()
 - since im using htis one way for the moment is like this.. ( in some places auto behaviour ) 
@@ -316,11 +318,14 @@ its bothering me ... maybe i want
   - `ltl.Impl.OP_CODES`
   - `ltl.Impl.ERROR_CODES`
   - `ltl.Impl.WARN_CODES`
+  - `ltl.Impl.BEV_CODES`
   - `ltl.Impl.Emitter`
+  - `ltl.Impl.Behaviours`
   - `ltl.Impl.Listener`
   - `ltl.Impl.Server`
   - `ltl.Impl.OP.__mandatory` -> ensure integrity
   - `ltl.Impl.Runner` - build
+  - `ltl.Impl.Runner.Retry`
   - `ltl.Impl.Defaults`
   - `ltl.Impl.User` -> this is the default way to identify you
   - `ltl.Impl.DB`
@@ -341,8 +346,10 @@ its bothering me ... maybe i want
 - `ltl.help()`
 - `ltl.status()`
 - `ltl.caches()`
+- `ltl.behaviours()`
 - `ltl.read()`
 - `ltl.run()`
+- `ltl.retry()`
 - `ltl.net()` - uu-mac-id
 - `ltl.interfaces()`
 - `ltl.running()`
@@ -381,6 +388,7 @@ its bothering me ... maybe i want
 - `ltl.broadcast()`
 - `ltl.stream()`
 - `ltl.Server()`
+- `ltl.retry()`
 
 - unsure what language im using .. 
 
