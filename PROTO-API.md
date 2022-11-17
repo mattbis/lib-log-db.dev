@@ -31,7 +31,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `root.logger.evt.path` - set before running if want custom.. but this log is small....
 - `root.heap.path`
 - `root.dump.path`
-- `root.crash_pad_handler.path`
+- `root.crash_handler.path` - this seems a good idea if you did if yourself .. 
 - `args.verbose` | defaults.verbose - cli messages
 - `args.debug` | defaults.debug - cli messages
 - `op.queue.disk.path` | defaults var root... 
