@@ -48,6 +48,8 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `can.reserve`
 - `can.setup`
 - `can.install`
+- `can.serve`
+- `can.listen`
 - `can.args` - no args work whatsoever
 - `can.stat` - if its stable you can stop it bothering... 
 - `can.os.dirs` - dont use any os stuff just use memmmmmmoooorry
@@ -69,7 +71,8 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.manifest_index_hash(algor)`
 - `ltl.SEMVER_VERSION`
 - `ltl.VERSION` derived semver serial + buildnumber
-- `ltl.DEFAULT_DATE_SYSTEM` - enum....
+- `ltl.DEFAULT_DATE_SYSTEM` - enum.... default is iso
+- `ltl.DEFAULT_DATE_PRECISION` - enum... defaults are ms
 - `ltl.DEFAULT_APPEND_OPTIONS`
   - { ?append_interval: 2[0|pms|pn|pt|po|ms] }
 - `ltl.BUILD_MANIFEST`
@@ -78,7 +81,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
   --> `{v:'', sys_v:'',dw:'',user:'',machine:'',?pid,?path,?process,?std_in_last,?std_in_range,?std_error}`
 - `ltl.DEFAULT_MANIFEST`
   --> `{ ?...DEFAULT_ENVELOPE, ?...BUILD_MANIFEST, ?custom_env }` - this is like a construct you can pass a number to control what it does, or give it an object based on the defaults... or make one that it will cache... ( manifest will do whatever you tell it - get or set if it doesnt exist, if it clashes another is created )
-- `ltl.DEFAULT_MESSAGE[N=/dev/random{3}]`
+- `ltl.DEFAULT_MESSAGE[N=/dev/random{6}]`
   --> `{ 'ltl-foo%N', %evt_log%%last.count }
 - `ltl.manifests()` it always uses the current but keeps them since its handy to see what somebody or I did before I forget or make a mistake
 - `ltl.manifest()` ==> `manifest_index : BigInteger` get or set a new one
