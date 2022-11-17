@@ -39,8 +39,8 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `logger.server.path`
 - `should.integrity` - set this to reduce the frequency of integrity operations ( like a friendly command line switch ie.. --paranoid --okay ) etc
 - `integrity.op.path` - this will dump the operation before it tries it etc - but default None
-- `integrity.before.path` - setting this enables it ... probably
-- `integrity.last.path`
+- `integrity.dump.before.path` - setting this enables it ... probably - dont enable this 
+- `integrity.dump.last.path` - dont enable this
 - `manifests.path`
 - `scratch.path` - this is due to the manifest envelope, and whatever is being written .. although it will chunk it. its teh queue path...
 - `can.fork` - cluster
