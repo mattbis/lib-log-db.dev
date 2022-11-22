@@ -139,8 +139,11 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.integrity_check()` this blocks and might be called - always on startup
 - `ltl.hook(symAppend,({data}) => ltl.OP[copy](last, data)`
 
+- `ltl.CACHE`
 - `ltl.cache()` keys, struct, used by a lot of things...
   - `ltl.cache_frags(_,_,pr)`
+  - `ltl.cache_export(ltl.CACHE.EXPORT_TYPE= default | bit)`
+  - see _CACHE you cannot restore a cache completely just parts of it based on runtime... however it will significantly improve all speeds... precache... statically.
 
 - `ltl.OP.__mandatory()` checks things exists, checks hashes match
 - `ltl.safe_lookup()`
