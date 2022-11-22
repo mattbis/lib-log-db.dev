@@ -8,6 +8,11 @@
 
 - its time to consolidate now the api has stuff a wrapper does and the core does in one. its best to split it.
 
+### todo
+- mode should control the sys usage in a clear way aside from the main controls ( this is for a very simple machine )
+- most of this is in the wrapper - the dyn parts
+- shared and private 
+
 # all
 - the order of calls determines what happens... it just does the min expected. to script it means using op_seq()
 - since im using htis one way for the moment is like this.. ( in some places auto behaviour ) 
@@ -118,10 +123,9 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 #### message
 - can be anything... 
 
-### private api
+### private api -todo
 
 - `ltl.sanify()` its possible weird chars
-- `ltl.logger.set` log of operations
 - `ltl.integrity_check()` this blocks and might be called - always on startup
 - `ltl.hook(symAppend,({data}) => ltl.OP[copy](last, data)`
 
@@ -135,8 +139,6 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 
 #### index ==>
 - `ltl.definition(topic)` matches a filter struct
-
-- `ltl.seek(ltl._CACHE,_)` 
  
 - `ltl.defaults(ltl._TOPIC,_)` index via default into topic cache
 - `ltl.reserve(ltl._CACHE)` todo this is gonna be not this simple since it also is another parto f this i ahvent added yet 
@@ -145,15 +147,20 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.index({prop_match,val_match,int_match})`
 
 - `ltl.lookup()` - util method for below
+- `ltl.suggest()` 
+- `ltl.query()`
 - `ltl.filter()` - create or get ( pre cache some struct )
 
 - `ltl.one(symMANIFEST|symDATA, filter)` --> also ltl.verify()
 - `ltl.range(..)`
 - `ltl.some(..)`
 
-- `ltl.raw(..)`
-
 - `ltl.flush(..)`
+
+## stores
+- `ltl.seek(..)`
+- `ltl.raw(..)`
+- `ltl.spread(..)
 
 ## nodes ==> todo(wip) v2
 .. + parity for tmrw
