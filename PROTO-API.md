@@ -286,6 +286,7 @@ its bothering me ... maybe i want
 - `ltl.flags.hashing`
 - `ltl.flags.file_lock`
 - `ltl.flags.key_lock`
+- `ltl.flags.store`
 
 ### OPS
 - `0..10`
@@ -354,7 +355,9 @@ its bothering me ... maybe i want
   - `ltl.DEFAULTS`
   - `ltl.user`
   - `ltl.index`
+  - `ltl.store`
   - `ltl.os.integrity()` -> checks we have dispace etc and whatever else... you can call it it will queue itself
+  - `ltl.os.volume()`
   - `ltl.os.net()`
   - `ltl.os.net.uu-mac-id()`
   - `ltl.aimpl` 
@@ -385,6 +388,7 @@ its bothering me ... maybe i want
   - `ltl.Impl.DB`
   - `ltl.Impl.Index`
   - `ltl.Impl.OS`
+  - `ltl.Impl.OS.Volume`
   - `ltl.Impl.net`
   - `ltl.Impl.HQ` - evt queue
   - `ltl.Impl.PQ` - op queue
@@ -404,7 +408,6 @@ its bothering me ... maybe i want
 - `ltl.read()`
 - `ltl.flags()`
 - `ltl.run()`
-- `ltl.retry()`
 - `ltl.net()` - uu-mac-id
 - `ltl.interfaces()`
 - `ltl.running()`
@@ -417,9 +420,11 @@ its bothering me ... maybe i want
 - `ltl.cleanup()`
 - `ltl.errors()`
 - `ltl.error_codes()`
+- `ltl.volumes()`
 
 ##### these are micro tasks ... 
 - `ltl.OS_VALIDATOR.testPath()`
+- `ltl.OS_VALIDATOR.testVolume()`
 - `ltl.OS_VALIDATOR.testExecution()`
 - `ltl.OS_VALIDATOR.testSubProcess()`
 - `ltl.OS_VALIDATOR.testPermissions()`
@@ -490,3 +495,5 @@ ideas on resolution:-
 - SOFT_PAR
 - HARD_PAR
 - 
+
+- `ltl.retry()`
