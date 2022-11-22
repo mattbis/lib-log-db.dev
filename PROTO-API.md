@@ -481,3 +481,10 @@ ideas on resolution:-
 -- this is actually how i sohuld be thinkgin aobut last & dump except its a db sense but the terms shoudl be unified
 
 ` can.branch`
+
+-- parity then becomes one of 3 main ENUMS
+
+- FILE_PAR
+- SOFT_PAR
+- HARD_PAR
+- 
