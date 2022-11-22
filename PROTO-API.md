@@ -435,7 +435,7 @@ its bothering me ... maybe i want
 
 - unsure what language im using .. 
 
-## graveyard
+## graveyard - nusery - incubator
 - `ltl.force_manifest_version_append()`
 - `ltl.force_append_interval()`
 - `ltl.clean()` not sure at the moment.. 
@@ -461,5 +461,7 @@ ideas on resolution:-
   - `ltl.Table`
   - `ltl.Graph`
   - `ltl.symTREE`
+
+-- this is actually how i sohuld be thinkgin aobut last & dump except its a db sense but the terms shoudl be unified
 
 ` can.branch`
