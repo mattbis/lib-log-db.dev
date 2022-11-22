@@ -482,7 +482,7 @@ ideas on resolution:-
 
 ` can.branch`
 
--- parity then becomes one of 3 main ENUMS
+-- parity then becomes one of 3 main ENUMS + this is a bitfield you can set.. - to replace the above concerns etc
 
 - FILE_PAR
 - SOFT_PAR
