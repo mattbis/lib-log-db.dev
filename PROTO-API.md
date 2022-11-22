@@ -27,6 +27,7 @@ or config
 2. `ltl --cmd [options]`
 3. `ltl --config [keys=val,..N] cmd|--cmd [options]`
 
+##### finite control -- todo split up the easy shortcuts
 - `force-all.path` - contain it in one place ... `/opt/ltl` - if not its Null
 evt is the base logger of the server, process.. whatever you do it will write.. unless it cant.
 - `limit.nodes` - .. tmrw
@@ -59,6 +60,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `can.install`
 - `can.serve`
 - `can.listen`
+- `can.shared-mem`
 - `can.args` - no args work whatsoever
 - `can.stat` - if its stable you can stop it bothering... 
 - `can.os.dirs` - dont use any os stuff just use memmmmmmoooorry
@@ -69,7 +71,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `must.user` - use hash and user and os only + eth mac addresss
 - `must.sanify` - the message is checked for weird stuff
 - `must.sparse` - dont reuse any nodes.. 
-- `must.protected` - dont use shared memory ( its not really aimed at these things but singular usages on safe machines.. )
+- `must.protected` - dont use shared memory ( its not really aimed at these things but singular usages on safe machines.. ) - sets can.shared-mem
 - `can.disk` - you cant have both 0 <== only use for testing - since very dangerous
 - `can.ram` - this means it wont use any buffer but minimum and will be very very slow....  todo later on you can give a finite for whatever system to run on .
 - `must.os`
@@ -118,6 +120,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.cache()`
   - `ltl.cache_frags(_,_,pr)`
 
+- `ltl.OP.__mandatory()` checks things exists, checks hashes match
 - `ltl.safe_lookup()`
 
 #### index ==>
@@ -189,6 +192,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 
 - `ltl.init()`
 - `ltl.setup()`
+- `ltl.mandatory()` 
 
 - `ltl.get_symbol_keys()`
 
@@ -326,6 +330,7 @@ its bothering me ... maybe i want
   - use abstract instead and do weird stuff -- its likely a bit will be here if i dont have time..
   - `--abstract` - provide piped script abstracts
 - `ltl.impl` should be coded by somebody else better than me .. 
+  - `ltl.op.__mandatory` - stops borking of data - see behaviours
   - `ltl.db.log.matt` - simple db .get() .set()
   - `ltl.db.struct.matt` - simple default struct
   - `ltl.db.mem` - default implm
@@ -422,3 +427,6 @@ its bothering me ... maybe i want
 - `ltl.force_manifest_version_append()`
 - `ltl.force_append_interval()`
 - `ltl.clean()` not sure at the moment.. 
+
+ideas on resolution:-
+- `config.mandatory` mem,disk,query,get,set,op,vp,sp,user,sys,mem,struct,cache,os,perfagg,perfg,perflog,syslog,distlog,winlog
