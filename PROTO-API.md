@@ -44,6 +44,7 @@ the below is confusing we have classes of config.. split the wrapper and lib
 
 evt is the base logger of the server, process.. whatever you do it will write.. unless it cant.
 - `limit.nodes` 0
+- `root.spread`
 - `root.logger.evt.path` - set before running if want custom.. but this log is small....
 - `root.heap.path`
 - `root.dump.path`
