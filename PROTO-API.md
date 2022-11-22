@@ -50,6 +50,9 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `manifests.path`
 - `scratch.path` - this is due to the manifest envelope, and whatever is being written .. although it will chunk it. its teh queue path...
 - `can.fork` - cluster
+- `can.link` - link nodes into priv memory
+- `can.cleanup` - cleanup nodes
+- `can.ref` - keep nodes
 - `can.index`
 - `can.reserve` - effectively controls caching and indexes... 
 - `can.setup`
@@ -83,6 +86,9 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
   - { ?append_interval: 2[0|pms|pn|pt|po|ms] }
 - `ltl.BUILD_MANIFEST`
   - { version, semver_version, number, builder, machine, date, priv_key_flag, repo_key_flag, options, flags, ltl_build_flags, ltl_build_headers_hash, build_hash, build_os, build_n, build_s }
+- `ltl.DEFAULT_NODE`
+- `ltl.DEFAULT_MEM`
+- `ltl.DEFAULT_LINK`
 - `ltl.DEFAULT_ENVELOPE`
   --> `{v:'', sys_v:'',dw:'',user:'',machine:'',?pid,?path,?process,?std_in_last,?std_in_range,?std_error}`
 - `ltl.DEFAULT_MANIFEST`
@@ -114,9 +120,6 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 
 - `ltl.safe_lookup()`
 
-#### nodes ==>
-.. + parity for tmrw
-
 #### index ==>
 - `ltl.seek(ltl._CACHE)`
  
@@ -136,6 +139,10 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.raw(..)`
 
 - `ltl.flush(..)`
+
+## nodes ==> todo(wip)
+.. + parity for tmrw
+##### ref, link
 
 ### protected api - debugging - dev
 - `ltl.dangerously_flush_queue()`
@@ -163,14 +170,16 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.symHARD_LOCK`
 - `ltl.symSOFT_LOCK`
 - `ltl.symPARITY`
+- `ltl.symNODE`
 
 - `ltl.symNONE` - you can use this to just write a test envelope/message or wherever its the same as `_`
 - `ltl._` - this means partial for some thing... if you need it
 
 #### op codes are the method names just like `ltl.hook(op_code|method_id|error_code)` probably...
 
-- `ltl.OP(code|method)`
-- `ltl.dimpl.OP[{0,init}]`
+- `ltl.OP(code|method)` call it
+- `ltl.OP.default()` get the default
+- `ltl.dimpl.OP[{0,init}]` default impl linked to various
 
 #### error codes
 - `ltl.ERROR(code|name)`
@@ -240,6 +249,8 @@ its bothering me ... maybe i want
 - `ltl.flags.new` - it never run before since it will make `/var/somewhere i forgot/ltl/evt.log`
 - `ltl.flags.waiting`
 - `ltl.flags.pending`
+- `ltl.flags.linked`
+- `ltl.flags.cleanup`
 
 ### OPS
 - `0..10`
@@ -291,6 +302,9 @@ its bothering me ... maybe i want
   - `ltl.msg`
   - `ltl.OP.*`
   - `ltl.db`
+  - `ltl.db.log`
+  - `ltl.db.mem`
+  - `ltl.db.struct`
   - `ltl.emitter`
   - `ltl.Envelope`
   - `ltl.Message`
@@ -310,8 +324,11 @@ its bothering me ... maybe i want
   - `ltl.os.net.uu-mac-id()`
 - `ltl.aimpl` 
   - use abstract instead and do weird stuff -- its likely a bit will be here if i dont have time..
-- `ltl.impl`
-  - `ltl.db.matt` - simple db
+  - `--abstract` - provide piped script abstracts
+- `ltl.impl` should be coded by somebody else better than me .. 
+  - `ltl.db.log.matt` - simple db .get() .set()
+  - `ltl.db.struct.matt` - simple default struct
+  - `ltl.db.mem` - default implm
   - directly insert whatever - this is much faster than user .hook() or events.. 
 ### Impl
 - `ltl.Impl`
@@ -364,12 +381,21 @@ its bothering me ... maybe i want
 - `ltl.error_codes()`
 - ?`ltl.cores(Int)`
 - ?`ltl.threads(Int)`
+
 ##### these are micro tasks ... 
 - `ltl.OS_VALIDATOR.testPath()`
 - `ltl.OS_VALIDATOR.testExecution()`
 - `ltl.OS_VALIDATOR.testSubProcess()`
 - `ltl.OS_VALIDATOR.testPermissions()`
-- `ltl.OS_VALIDATOR.testUser()`
+- `ltl.OS_VALIDATOR.testUserMatches()`
+- `ltl.OS_VALIDATOR.checkUserChange()`
+- `ltl.OS_VALIDATOR.testDataWrite()`
+- `ltl.OS_VALIDATOR.testDataRead()`
+- `ltl.OS_VALIDATOR.testDataChMod()`
+- `ltl.OS_VALIDATOR.testTemp()`
+- `ltl.OS_VALIDATOR.testProgramDataRead()`
+- `ltl.OS_VALIDATOR.testProgramDataChMod()`
+- `ltl.OS_VALIDATOR.testProgramDataWrite()`
 
 #### dynamic library hooking - use above in code
 - `ltl.hookable()`
@@ -395,3 +421,4 @@ its bothering me ... maybe i want
 ## graveyard
 - `ltl.force_manifest_version_append()`
 - `ltl.force_append_interval()`
+- `ltl.clean()` not sure at the moment.. 
