@@ -64,6 +64,8 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `integrity.dump.last.path` - dont enable this
 - `manifests.path`
 - `scratch.path` - this is due to the manifest envelope, and whatever is being written .. although it will chunk it. its teh queue path...
+- `can.force.readkeys`
+- `can.force.writekeys`
 - `can.index`
 - `can.reserve` - effectively controls caching and indexes... can be mem val
 - `can.reserve.mem`
@@ -102,6 +104,8 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
   - { ?append_interval: 2[0|pms|pn|pt|po|ms] }
 - `ltl.BUILD_MANIFEST`
   - { version, semver_version, number, builder, machine, date, priv_key_flag, repo_key_flag, options, flags, ltl_build_flags, ltl_build_headers_hash, build_hash, build_os, build_n, build_s }
+  - `ltl.DEFAULT_RKEY`
+  - `ltl.DEFAULT_WKEY`
 - `ltl.DEFAULT_NODE`
 - `ltl.DEFAULT_MEM`
 - `ltl.DEFAULT_LINK`
@@ -159,6 +163,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.flush(..)`
 
 ## stores
+- `ltl.store_keys()`
 - `ltl.seek(..)`
 - `ltl.raw(..)`
 - `ltl.spread(..)
@@ -176,6 +181,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.dangerously_unseal_config()` - sealed by default
 - `ltl.dangerously_emit_signal()`
 - `ltl.dangerously_manifest_replace(index : BigInteger)` oops
+- `ltl.dangerously_disable_store_keys()`
 
 ### public api
 
@@ -276,6 +282,8 @@ its bothering me ... maybe i want
 - `ltl.flags.linked`
 - `ltl.flags.cleanup`
 - `ltl.flags.hashing`
+- `ltl.flags.file_lock`
+- `ltl.flags.key_lock`
 
 ### OPS
 - `0..10`
