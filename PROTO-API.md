@@ -135,7 +135,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.integrity_check()` this blocks and might be called - always on startup
 - `ltl.hook(symAppend,({data}) => ltl.OP[copy](last, data)`
 
-- `ltl.cache()`
+- `ltl.cache()` keys, struct, used by a lot of things...
   - `ltl.cache_frags(_,_,pr)`
 
 - `ltl.OP.__mandatory()` checks things exists, checks hashes match
@@ -144,6 +144,9 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.reservation(symDISK)`
 
 #### index ==>
+
+sometihngi is botherign me here having message and envelope read keys in private memory.... im missing it but its part of the below i think... 
+
 - `ltl.definition(topic)` matches a filter struct
  
 - `ltl.defaults(ltl._TOPIC,_)` index via default into topic cache
