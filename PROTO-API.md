@@ -111,6 +111,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
   - { version, semver_version, number, builder, machine, date, priv_key_flag, repo_key_flag, options, flags, ltl_build_flags, ltl_build_headers_hash, build_hash, build_os, build_n, build_s }
   - `ltl.DEFAULT_RKEY`
   - `ltl.DEFAULT_WKEY`
+  - `ltl.DEFAULT_CKEY`
 - `ltl.DEFAULT_NODE`
 - `ltl.DEFAULT_MEM`
 - `ltl.DEFAULT_LINK`
