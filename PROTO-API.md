@@ -75,6 +75,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `can.serve`
 - `can.listen`
 - `can.shared-mem`
+- `can.volume`
 - `can.args` - no args work whatsoever
 - `can.stat` - if its stable you can stop it bothering... 
 - `can.os.dirs` - dont use any os stuff just use memmmmmmoooorry
@@ -164,9 +165,10 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 
 ## stores
 - `ltl.store_keys()`
+- `ltl.vol_keys()`
 - `ltl.seek(..)`
 - `ltl.raw(..)`
-- `ltl.spread(..)
+- `ltl.spread(..)`
 
 ## nodes ==> todo(wip) v2
 .. + parity for tmrw
