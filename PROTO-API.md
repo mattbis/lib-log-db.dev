@@ -18,7 +18,7 @@
 
 ### constructor
 `ltl`
-- set dynamically or invoke filter() in the struct - this shoudl be renamed for a simplistic structure which is the indendedated usage...
+- set dynamically or invoke n in the struct - this shoudl be renamed for a simplistic structure which is the indendedated usage...
 `ltl._CACHE`
 `ltl._TOPIC`
 `ltl._FILTERS`
@@ -60,6 +60,8 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `scratch.path` - this is due to the manifest envelope, and whatever is being written .. although it will chunk it. its teh queue path...
 - `can.index`
 - `can.reserve` - effectively controls caching and indexes... can be mem val
+- `can.reserve.mem`
+- `can.reserve.disk`
 - `can.setup`
 - `can.install`
 - `can.serve`
@@ -129,11 +131,15 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.OP.__mandatory()` checks things exists, checks hashes match
 - `ltl.safe_lookup()`
 
+- `ltl.reservation(symDISK)`
+
 #### index ==>
-- `ltl.seek(ltl._CACHE)`
+- `ltl.definition(topic)` matches a filter struct
+
+- `ltl.seek(ltl._CACHE,_)` 
  
-- `ltl.defaults(ltl._TOPIC)`
-- `ltl.reserve(ltl._CACHE)`
+- `ltl.defaults(ltl._TOPIC,_)` index via default into topic cache
+- `ltl.reserve(ltl._CACHE)` todo this is gonna be not this simple since it also is another parto f this i ahvent added yet 
 
 - `ltl.index(ltl.DEFAULT_FILTERS)`
 - `ltl.index({prop_match,val_match,int_match})`
@@ -165,7 +171,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 
 ### public api
 
-#### symbols - use in wrapppper
+#### symbols - use in wrapppper - obviously the below is not really how its gonna work just a starting point since they would be too hard.. 
 - `ltl.symMANIFEST`
 - `ltl.symDATA`
 - `ltl.symREADS`
@@ -179,6 +185,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.symHARD_LOCK`
 - `ltl.symSOFT_LOCK`
 - `ltl.symSTRUCT`
+- `ltl.symDISK`
 
 - `ltl.symNONE` - you can use this to just write a test envelope/message or wherever its the same as `_`
 - `ltl._` - this means partial for some thing... if you need it
