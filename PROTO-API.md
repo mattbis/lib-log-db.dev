@@ -12,6 +12,10 @@
 - mode should control the sys usage in a clear way aside from the main controls ( this is for a very simple machine )
 - most of this is in the wrapper - the dyn parts
 - shared and private 
+- rkey wkeys ckeys 
+- mrkeys mwkeys erkeys ewkeys
+- --safe --paranoid --casual --forgetful < someting like this for how it works for safety,, im prprobably not doing safe ,,, just paranoid.. i dont need it 
+im mostly thinkign aobut tools on a safe machine where i dont cacre about a lot of stuff
 
 # all
 - the order of calls determines what happens... it just does the min expected. to script it means using op_seq()
