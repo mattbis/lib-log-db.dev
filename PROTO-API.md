@@ -165,7 +165,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 
 ### public api
 
-#### symbols
+#### symbols - use in wrapppper
 - `ltl.symMANIFEST`
 - `ltl.symDATA`
 - `ltl.symREADS`
@@ -178,6 +178,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.symIDLE`
 - `ltl.symHARD_LOCK`
 - `ltl.symSOFT_LOCK`
+- `ltl.symSTRUCT`
 
 - `ltl.symNONE` - you can use this to just write a test envelope/message or wherever its the same as `_`
 - `ltl._` - this means partial for some thing... if you need it
@@ -331,7 +332,7 @@ its bothering me ... maybe i want
   - `ltl.os.integrity()` -> checks we have dispace etc and whatever else... you can call it it will queue itself
   - `ltl.os.net()`
   - `ltl.os.net.uu-mac-id()`
-- `ltl.aimpl` 
+  - `ltl.aimpl` 
   - use abstract instead and do weird stuff -- its likely a bit will be here if i dont have time..
   - `--abstract` - provide piped script abstracts
 - `ltl.impl` should be coded by somebody else better than me .. 
@@ -448,3 +449,10 @@ ideas on resolution:-
 - `config.mandatory` mem,disk,query,get,set,op,vp,sp,user,sys,mem,struct,cache,os,perfagg,perfg,perflog,syslog,distlog,winlog
 
 - `ltl.symPARITY`
+
+- `ltl.Tree`
+  - `ltl.Table`
+  - `ltl.Graph`
+  - `ltl.symTREE`
+
+` can.branch`
