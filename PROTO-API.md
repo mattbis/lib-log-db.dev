@@ -2,6 +2,8 @@
 
 - now to actually implement this )) erm what langauge.. im thinking go for now .. since the other projects are already really hard to think about.. but im kinda writing it like Python... interesting.. maybe I could use cosmo and python or go and python and this will be a part of msmeo..  
 
+- or well rust is kinda growing slowly on me at first it looked weird ..
+
 - todo tomorrow instead last is parity yes .. but a parity diff to the last store which is better.. + we can have a ghost tail gate which is part of verify... 
 
 - its time to consolidate now the api has stuff a wrapper does and the core does in one. its best to split it.
@@ -15,7 +17,11 @@
 - todo
 
 ### constructor
-- todo lang
+`ltl`
+- set dynamically or invoke filter() in the struct - this shoudl be renamed for a simplistic structure which is the indendedated usage...
+`ltl._CACHE`
+`ltl._TOPIC`
+`ltl._FILTERS`
 
 ### config / note you can use args or shortcuts... 
 - `ltl.config()`
@@ -27,10 +33,12 @@ or config
 2. `ltl --cmd [options]`
 3. `ltl --config [keys=val,..N] cmd|--cmd [options]`
 
-##### finite control -- todo split up the easy shortcuts
+##### finite control -- todo split up the easy shortcuts 
+the below is confusing we have classes of config.. split the wrapper and lib
 - `force-all.path` - contain it in one place ... `/opt/ltl` - if not its Null
+
 evt is the base logger of the server, process.. whatever you do it will write.. unless it cant.
-- `limit.nodes` - .. tmrw
+- `limit.nodes` 0
 - `root.logger.evt.path` - set before running if want custom.. but this log is small....
 - `root.heap.path`
 - `root.dump.path`
@@ -50,12 +58,8 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `integrity.dump.last.path` - dont enable this
 - `manifests.path`
 - `scratch.path` - this is due to the manifest envelope, and whatever is being written .. although it will chunk it. its teh queue path...
-- `can.fork` - cluster
-- `can.link` - link nodes into priv memory
-- `can.cleanup` - cleanup nodes
-- `can.ref` - keep nodes
 - `can.index`
-- `can.reserve` - effectively controls caching and indexes... 
+- `can.reserve` - effectively controls caching and indexes... can be mem val
 - `can.setup`
 - `can.install`
 - `can.serve`
@@ -79,7 +83,9 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 
 ### runtime/config/message envelope
 - `ltl.envelope_hash(algor)`
+- `ltl.message_hash(algor)`
 - `ltl.manifest_index_hash(algor)`
+- `ltl.NONE`
 - `ltl.SEMVER_VERSION`
 - `ltl.VERSION` derived semver serial + buildnumber
 - `ltl.DEFAULT_DATE_SYSTEM` - enum.... default is iso
@@ -143,9 +149,9 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 
 - `ltl.flush(..)`
 
-## nodes ==> todo(wip)
+## nodes ==> todo(wip) v2
 .. + parity for tmrw
-##### ref, link
+##### ref, link ref() link()
 
 ### protected api - debugging - dev
 - `ltl.dangerously_flush_queue()`
@@ -172,8 +178,6 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.symIDLE`
 - `ltl.symHARD_LOCK`
 - `ltl.symSOFT_LOCK`
-- `ltl.symPARITY`
-- `ltl.symNODE`
 
 - `ltl.symNONE` - you can use this to just write a test envelope/message or wherever its the same as `_`
 - `ltl._` - this means partial for some thing... if you need it
@@ -255,6 +259,7 @@ its bothering me ... maybe i want
 - `ltl.flags.pending`
 - `ltl.flags.linked`
 - `ltl.flags.cleanup`
+- `ltl.flags.hashing`
 
 ### OPS
 - `0..10`
@@ -311,12 +316,12 @@ its bothering me ... maybe i want
   - `ltl.db.struct`
   - `ltl.emitter`
   - `ltl.Envelope`
+  - `ltl.Flag` make it do something via .impl.
   - `ltl.Message`
   - `ltl.Manifest`
   - `ltl.Server`
   - `ltl.ERROR`
-  - `ltl.FLAGS`
-  - `ltl.flag`
+  - `ltl.FLAGS` just have one
   - `ltl.OP` -> implements OP.__mandatory
   - `ltl.warn`
   - `ltl.run`
@@ -341,8 +346,9 @@ its bothering me ... maybe i want
   - `ltl.Impl.ERROR_CODES`
   - `ltl.Impl.WARN_CODES`
   - `ltl.Impl.BEV_CODES`
-  - `ltl.Impl.Emitter`
   - `ltl.Impl.Behaviours`
+  - `ltl.Impl.Emitter`
+  - `ltl.Impl.FlagRecord()`
   - `ltl.Impl.Listener`
   - `ltl.Impl.Server`
   - `ltl.Impl.OP.__mandatory` -> ensure integrity
@@ -370,6 +376,7 @@ its bothering me ... maybe i want
 - `ltl.caches()`
 - `ltl.behaviours()`
 - `ltl.read()`
+- `ltl.flags()`
 - `ltl.run()`
 - `ltl.retry()`
 - `ltl.net()` - uu-mac-id
@@ -384,8 +391,6 @@ its bothering me ... maybe i want
 - `ltl.cleanup()`
 - `ltl.errors()`
 - `ltl.error_codes()`
-- ?`ltl.cores(Int)`
-- ?`ltl.threads(Int)`
 
 ##### these are micro tasks ... 
 - `ltl.OS_VALIDATOR.testPath()`
@@ -419,7 +424,6 @@ its bothering me ... maybe i want
 - `ltl.broadcast()`
 - `ltl.stream()`
 - `ltl.Server()`
-- `ltl.retry()`
 
 - unsure what language im using .. 
 
@@ -428,5 +432,19 @@ its bothering me ... maybe i want
 - `ltl.force_append_interval()`
 - `ltl.clean()` not sure at the moment.. 
 
+- `ltl.symNODE`
+- `ltl.symLINK`
+- `can.fork` - cluster
+- `can.link` - link nodes into priv memory
+- `can.cleanup` - cleanup nodes
+- `can.ref` - keep nodes
+
+- `ltl.retry()`
+
+- ?`ltl.cores(Int)`
+- ?`ltl.threads(Int)`
+
 ideas on resolution:-
 - `config.mandatory` mem,disk,query,get,set,op,vp,sp,user,sys,mem,struct,cache,os,perfagg,perfg,perflog,syslog,distlog,winlog
+
+- `ltl.symPARITY`
