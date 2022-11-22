@@ -486,7 +486,7 @@ its bothering me ... maybe i want
 - ?`ltl.threads(Int)`
 
 ideas on resolution:-
-- `config.mandatory` mem,disk,query,get,set,op,vp,sp,user,sys,mem,struct,cache,os,perfagg,perfg,perflog,syslog,distlog,winlog,defrag
+- `config.mandatory` mem,disk,query,get,set,op,vp,sp,user,sys,mem,struct,cache,os,perf-agg,perf-g,perf-log,sys-log,dist-log,win-log,defrag
 
 - `ltl.symPARITY`
 
