@@ -126,6 +126,9 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `ltl.DEFAULT_NODE`
 - `ltl.DEFAULT_MEM`
 - `ltl.DEFAULT_LINK`
+- `ltl.DEFAULT_SPARSE_ENVELOPE`
+- `ltl.DEFAULT_SPARSE_MANIFEST`
+- `ltl.DEFAULT_SPARSE_MESSAGE`
 - `ltl.DEFAULT_ENVELOPE`
   --> `{v:'', sys_v:'',dw:'',user:'',machine:'',?pid,?path,?process,?std_in_last,?std_in_range,?std_error}`
 - `ltl.DEFAULT_MANIFEST`
@@ -533,3 +536,7 @@ ideas on resolution:-
 - dangerous env, msg keys
 - -- private key cache ( probably dangerous ) 
 mkey,mymkey,myenvkey,defenvkey
+
+
+
+- dedupe()
