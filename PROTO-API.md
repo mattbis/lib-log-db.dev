@@ -75,9 +75,6 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `force.readkeys`
 - `force.writekeys`
 - `force.chkeys`
-- `force.no-net`
-- `force.one.core`
-- `force.one.vol`
 - `can.index`
 - `can.reserve` - effectively controls caching and indexes... can be mem val
 - `can.reserve.mem`
