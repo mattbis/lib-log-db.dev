@@ -9,6 +9,9 @@
 - its time to consolidate now the api has stuff a wrapper does and the core does in one. its best to split it.
 
 ### todo
+
+- sep of static, thing, dyn, mixin, subclass, mixclass, cli, library, core, noargs, 32bit, win, lin, mac
+
 - mode should control the sys usage in a clear way aside from the main controls ( this is for a very simple machine )
 - most of this is in the wrapper - the dyn parts
 - shared and private 
@@ -80,6 +83,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `can.listen`
 - `can.shared-mem`
 - `can.volume`
+- `can.gpu`
 - `can.args` - no args work whatsoever
 - `can.stat` - if its stable you can stop it bothering... 
 - `can.os.dirs` - dont use any os stuff just use memmmmmmoooorry
@@ -180,6 +184,7 @@ sometihngi is botherign me here having message and envelope read keys in private
 - `ltl.seek(..)`
 - `ltl.raw(..)`
 - `ltl.spread(..)`
+- see: ltl.volumes()
 
 ## nodes ==> todo(wip) v2
 .. + parity for tmrw
@@ -211,8 +216,10 @@ sometihngi is botherign me here having message and envelope read keys in private
 - `ltl.symIDLE`
 - `ltl.symHARD_LOCK`
 - `ltl.symSOFT_LOCK`
-- `ltl.symSTRUCT`
-- `ltl.symDISK`
+- `ltl.symSTRUCT` filter / index / other stuff when i think about it 
+- `ltl.symVOL` virtual / real / volatile / sticky 
+- `ltl.symRAW` used for unmanaged files level stack
+- `ltl.symDisk` the actual device
 
 - `ltl.symNONE` - you can use this to just write a test envelope/message or wherever its the same as `_`
 - `ltl._` - this means partial for some thing... if you need it
@@ -298,6 +305,7 @@ its bothering me ... maybe i want
 - `ltl.flags.file_lock`
 - `ltl.flags.key_lock`
 - `ltl.flags.store`
+- `ltl.flags.gpu`
 
 ### OPS
 - `0..10`
@@ -371,6 +379,7 @@ its bothering me ... maybe i want
   - `ltl.os.volume()`
   - `ltl.os.net()`
   - `ltl.os.net.uu-mac-id()`
+  - `ltl.os.gpu()`
   - `ltl.aimpl` 
   - use abstract instead and do weird stuff -- its likely a bit will be here if i dont have time..
   - `--abstract` - provide piped script abstracts
@@ -400,6 +409,7 @@ its bothering me ... maybe i want
   - `ltl.Impl.Index`
   - `ltl.Impl.OS`
   - `ltl.Impl.OS.Volume`
+  - `ltl.Impl.OS.Gpu`
   - `ltl.Impl.net`
   - `ltl.Impl.HQ` - evt queue
   - `ltl.Impl.PQ` - op queue
@@ -428,6 +438,7 @@ its bothering me ... maybe i want
 - `ltl.op_codes()`
 - `ltl.op_restore()`
 - `ltl.op_export()`
+- `ltl.gpu()`
 - `ltl.cleanup()`
 - `ltl.errors()`
 - `ltl.error_codes()`
@@ -485,6 +496,7 @@ its bothering me ... maybe i want
 
 - ?`ltl.cores(Int)`
 - ?`ltl.threads(Int)`
+- ?`ltl.gpu(Int)
 
 ideas on resolution:-
 - `config.mandatory` mem,disk,query,get,set,op,vp,sp,user,sys,mem,struct,cache,os,perf-agg,perf-g,perf-log,sys-log,dist-log,win-log,defrag
@@ -508,3 +520,5 @@ ideas on resolution:-
 - 
 
 - `ltl.retry()`
+
+- symRaw, symDisk, 
