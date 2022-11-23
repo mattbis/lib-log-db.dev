@@ -232,6 +232,7 @@ sometihngi is botherign me here having message and envelope read keys in private
 - `ltl.symVOL` virtual / real / volatile / sticky 
 - `ltl.symRAW` used for unmanaged files level stack
 - `ltl.symDisk` the actual device
+- `ltl.symGPU` for some calls can see or try / force gpu usage - auto ideally... depending on modes
 
 - `ltl.symNONE` - you can use this to just write a test envelope/message or wherever its the same as `_`
 - `ltl._` - this means partial for some thing... if you need it
@@ -246,6 +247,9 @@ sometihngi is botherign me here having message and envelope read keys in private
 - `ltl.ERROR(code|name)`
 - `ltl.dimpl.ERROR[0,init]` --> usually is going to point to `ltl.dimpl.ERROR`
 
+### modes todo
+- `ltl.mode` `ltl.mode_default` 0 & `ltl.mode_enable_custom` 1, | `ltl.mode_block` 3, | `ltl.mode_strict` 4, | `ltl.mode_forgive` 5, | `ltl.mode_slowdown` 7, | `ltl.mode_speedup` 8, | `ltl.mode_normal` 9 ==> `ltl.mode_matt`
+
 #### methods
 
 - `ltl.init()`
@@ -257,8 +261,6 @@ sometihngi is botherign me here having message and envelope read keys in private
 - `ltl.lock` `[1,ltl.symHARD_LOCK||ltl.symSOFT_LOCK]`
 - `ltl.release` `[1]`
 - `ltl.locked()`
-
-- `ltl.mode` `ltl.mode_default` 0 & `ltl.mode_enable_custom` 1, | `ltl.mode_block` 3, | `ltl.mode_strict` 4, | `ltl.mode_forgive` 5, | `ltl.mode_slowdown` 7, | `ltl.mode_speedup` 8, | `ltl.mode_normal` 9 ==> `ltl.mode_matt`
 
 - `ltl.append(data,pr)`
 - `ltl.slow_append()` ==> append(_,9)
@@ -351,6 +353,8 @@ its bothering me ... maybe i want
 ### stat
 
 - `ltl.stat('writes')` - `ltl.stat('queue')` - `ltl.stat(symFlagBackup)`
+- `ltl.stat(symDisk)
+- `ltl.stat(symGpu)
 - `ltl.stat()`
 
 ### inner queue 
@@ -372,34 +376,39 @@ its bothering me ... maybe i want
   - `ltl.db.log`
   - `ltl.db.mem`
   - `ltl.db.struct`
+  - `ltl.db.agg`
   - `ltl.emitter`
   - `ltl.Envelope`
   - `ltl.Flag` make it do something via .impl.
   - `ltl.Message`
   - `ltl.Manifest`
   - `ltl.Server`
+  - `ltl.Emittable`
   - `ltl.ERROR`
   - `ltl.FLAGS` just have one
-  - `ltl.OP` -> implements OP.__mandatory
+  - `ltl.OP`
+  - `ltl.*op[release]`
   - `ltl.warn`
   - `ltl.run`
   - `ltl.DEFAULTS`
   - `ltl.user`
   - `ltl.index`
   - `ltl.store`
+  - `ltl.stores`
   - `ltl.os.integrity()` -> checks we have dispace etc and whatever else... you can call it it will queue itself
   - `ltl.os.volume()`
   - `ltl.os.net()`
   - `ltl.os.net.uu-mac-id()`
   - `ltl.os.gpu()`
-  - `ltl.aimpl` 
+  - `ltl.aimpl`
+  - `ltl.Store()`
   - use abstract instead and do weird stuff -- its likely a bit will be here if i dont have time..
-  - `--abstract` - provide piped script abstracts
+  - `--abstract` provide piped script abstracts
 - `ltl.impl` should be coded by somebody else better than me .. 
-  - `ltl.op.__mandatory` - stops borking of data - see behaviours
-  - `ltl.db.log.matt` - simple db .get() .set()
-  - `ltl.db.struct.matt` - simple default struct
-  - `ltl.db.mem` - default implm
+  - `ltl.op.__mandatory` stops borking of data - see behaviours
+  - `ltl.db.log.matt` simple db .get() .set()
+  - `ltl.db.struct.matt` simple default struct
+  - `ltl.db.mem` default implm
   - directly insert whatever - this is much faster than user .hook() or events.. 
 ### Impl
 - `ltl.Impl`
@@ -409,7 +418,8 @@ its bothering me ... maybe i want
   - `ltl.Impl.BEV_CODES`
   - `ltl.Impl.Behaviours`
   - `ltl.Impl.Emitter`
-  - `ltl.Impl.FlagRecord()`
+  - `ltl.Impl.Aggregator`
+  - `ltl.Impl.Flags`
   - `ltl.Impl.Listener`
   - `ltl.Impl.Server`
   - `ltl.Impl.OP.__mandatory` -> ensure integrity
@@ -419,6 +429,8 @@ its bothering me ... maybe i want
   - `ltl.Impl.DB`
   - `ltl.Impl.Index`
   - `ltl.Impl.OS`
+  - `ltl.Impl.Store`
+  - `ltl.Impl.Stores`
   - `ltl.Impl.OS.Volume`
   - `ltl.Impl.OS.Gpu`
   - `ltl.Impl.net`
@@ -454,6 +466,8 @@ its bothering me ... maybe i want
 - `ltl.errors()`
 - `ltl.error_codes()`
 - `ltl.volumes()`
+- `ltl.stores()`
+- `ltl.store()`
 
 ##### these are micro tasks ... 
 - `ltl.OS_VALIDATOR.testPath()`
