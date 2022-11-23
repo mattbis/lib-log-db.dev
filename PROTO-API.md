@@ -69,10 +69,10 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `should.os-test` - stop it doing this if a retry happens - instead forcing a fail
 - `debug.op.path` - this will dump the operation before it tries it etc - but default None
 - `manifests.path`
-- `scratch.path` - this is due to the manifest envelope, and whatever is being written .. although it will chunk it. its teh queue path...
 - `force.readkeys`
 - `force.writekeys`
 - `force.chkeys`
+- `can.temp` enable, set /home/myfancyuser/temp or it will default to the derived location.. 0 means it will use ram..
 - `can.index`
 - `can.reserve` - effectively controls caching and indexes... can be mem val
 - `can.reserve.mem`
@@ -96,8 +96,6 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `must.sanify` - the message is checked for weird stuff
 - `must.sparse` - dont reuse any nodes.. 
 - `must.protected` - dont use shared memory ( its not really aimed at these things but singular usages on safe machines.. ) - sets can.shared-mem
-- `can.disk` - you cant have both 0 <== only use for testing - since very dangerous
-- `can.ram` - this means it wont use any buffer but minimum and will be very very slow....  todo later on you can give a finite for whatever system to run on .
 - `must.os`
 - `must.wait.[op_code]` - this is due to some systems not being usual or disks or whatever, etc.... 
 - `force.retry.[op_code]` - tailor
