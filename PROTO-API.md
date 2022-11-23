@@ -71,8 +71,12 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `integrity.dump.last.path` - dont enable this
 - `manifests.path`
 - `scratch.path` - this is due to the manifest envelope, and whatever is being written .. although it will chunk it. its teh queue path...
-- `can.force.readkeys`
-- `can.force.writekeys`
+- `force.readkeys`
+- `force.writekeys`
+- `force.chkeys`
+- `force.no-net`
+- `force.one.core`
+- `force.one.vol`
 - `can.index`
 - `can.reserve` - effectively controls caching and indexes... can be mem val
 - `can.reserve.mem`
@@ -88,6 +92,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `can.stat` - if its stable you can stop it bothering... 
 - `can.os.dirs` - dont use any os stuff just use memmmmmmoooorry
 - `can.os.test` - dont use os test methods for operations...
+- `can.user.mac-uu`
 - `must.strict` - will sanify and stop if anything goes wrong.. 0 means forgive a bit
 - `must.fatal` - you can forgive, but if a fatal happens exit... will stop earlier than forgive
 - `debug.verify` - it will check every operation again...  in both places..
