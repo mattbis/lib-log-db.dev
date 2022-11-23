@@ -208,13 +208,14 @@ sometihngi is botherign me here having message and envelope read keys in private
 
 ### public api
 
-#### symbols - use in wrapppper - obviously the below is not really how its gonna work just a starting point since they would be too hard.. 
+#### symbols
 - `ltl.symMANIFEST`
 - `ltl.symDATA`
 - `ltl.symREADS`
 - `ltl.symWRITES`
 - `ltl.symFATAL`
 - `ltl.symAPPEND`
+- `ltl.symUnsafeAppend`
 - `ltl.symBLOCKING`
 - `ltl.symSLEEP_DEEP`
 - `ltl.symSLEEP_NAP`
@@ -257,6 +258,7 @@ sometihngi is botherign me here having message and envelope read keys in private
 
 - `ltl.append(data,pr)`
 - `ltl.slow_append()` ==> append(_,9)
+- `ltl.unsafe_append(data,symUnsafeAppend)`
 
 - `ltl.wait(1)` ==> `ltl.idle()`
 - `ltl.idled()`
