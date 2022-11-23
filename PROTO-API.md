@@ -8,6 +8,11 @@
 
 - its time to consolidate now the api has stuff a wrapper does and the core does in one. its best to split it.
 
+### modes todo
+- `smUnsafeAppend` stuff liek this is mode for the static , or the instance, you can do crazy stuff
+- `ltl.mode` `ltl.mode_default` 0 & `ltl.mode_enable_custom` 1, | `ltl.mode_block` 3, | `ltl.mode_strict` 4, | `ltl.mode_forgive` 5, | `ltl.mode_slowdown` 7, | `ltl.mode_speedup` 8, | `ltl.mode_normal` 9 ==> `ltl.mode_matt`
+
+
 ### todo
 
 - sep of static, thing, dyn, mixin, subclass, mixclass, cli, library, core, noargs, 32bit, win, lin, mac
@@ -19,6 +24,9 @@
 - mrkeys mwkeys erkeys ewkeys
 - --safe --paranoid --casual --forgetful < someting like this for how it works for safety,, im prprobably not doing safe ,,, just paranoid.. i dont need it 
 im mostly thinkign aobut tools on a safe machine where i dont cacre about a lot of stuff
+
+im starting to liek this is tiny, or then you can weirdly combine it... and it keeps itself away from the os by just calling it .. and then checking.. and doing itself if necessary... 
+
 
 # all
 - the order of calls determines what happens... it just does the min expected. to script it means using op_seq()
@@ -241,9 +249,6 @@ sometihngi is botherign me here having message and envelope read keys in private
 - `ltl.ERROR(code|name)`
 - `ltl.dimpl.ERROR[0,init]` --> usually is going to point to `ltl.dimpl.ERROR`
 
-### modes todo
-- `ltl.mode` `ltl.mode_default` 0 & `ltl.mode_enable_custom` 1, | `ltl.mode_block` 3, | `ltl.mode_strict` 4, | `ltl.mode_forgive` 5, | `ltl.mode_slowdown` 7, | `ltl.mode_speedup` 8, | `ltl.mode_normal` 9 ==> `ltl.mode_matt`
-
 #### methods
 
 - `ltl.init()`
@@ -256,9 +261,12 @@ sometihngi is botherign me here having message and envelope read keys in private
 - `ltl.release` `[1]`
 - `ltl.locked()`
 
-- `ltl.append(data,pr)`
-- `ltl.slow_append()` ==> append(_,9)
-- `ltl.unsafe_append(data,symUnsafeAppend)`
+its clear i need a way to say the whole thing works this way.... or not , its best via modes.. 
+
+- `ltl.append(?{pr},data)`
+- `ltl.append(?{pr,symUnsafeAppend},...data)
+- `ltl.slow_append()` ==> append(9,_)
+- `ltl.unsafe_append(?{pr},data)`
 
 - `ltl.wait(1)` ==> `ltl.idle()`
 - `ltl.idled()`
@@ -379,6 +387,8 @@ its bothering me ... maybe i want
   - `ltl.Manifest`
   - `ltl.Server`
   - `ltl.Emittable`
+  - `ltl.Mode`
+  - `ltl.mode`
   - `ltl.ERROR`
   - `ltl.FLAGS` just have one
   - `ltl.OP`
@@ -422,6 +432,7 @@ its bothering me ... maybe i want
   - `ltl.Impl.Defaults`
   - `ltl.Impl.User` -> this is the default way to identify you
   - `ltl.Impl.DB`
+  - `ltl.Impl.Mode`
   - `ltl.Impl.Index`
   - `ltl.Impl.OS`
   - `ltl.Impl.Store`
@@ -449,6 +460,7 @@ its bothering me ... maybe i want
 - `ltl.run()` turns args into ops, translate
 - `ltl.net()` uu-mac-id
 - `ltl.interfaces()`
+- `ltl.modes()`
 - `ltl.running()`
 - `ltl.op(CODE)` call one operation 
 - `ltl.ops()` ==> codes()
