@@ -45,6 +45,7 @@ or config
 2. `ltl --cmd [options]`
 3. `ltl --config [keys=val,..N] cmd|--cmd [options]`
 
+### this is two things atm moment so it takes a bit of reading .. 
 ##### finite control -- todo split up the easy shortcuts 
 the below is confusing we have classes of config.. split the wrapper and lib
 - `force-all.path` - contain it in one place ... `/opt/ltl` - if not its Null
@@ -104,6 +105,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `can.ram` - this means it wont use any buffer but minimum and will be very very slow....  todo later on you can give a finite for whatever system to run on .
 - `must.os`
 - `must.wait.[op_code]` - this is due to some systems not being usual or disks or whatever, etc.... 
+- `force.retry.[op_code]` - tailor
 
 ### runtime/config/message envelope
 - `ltl.envelope_hash(algor)`
@@ -411,8 +413,7 @@ its bothering me ... maybe i want
   - `ltl.Impl.Listener`
   - `ltl.Impl.Server`
   - `ltl.Impl.OP.__mandatory` -> ensure integrity
-  - `ltl.Impl.Runner` - build
-  - `ltl.Impl.Runner.Retry`
+  - `ltl.Impl.Runner` build, cli etc
   - `ltl.Impl.Defaults`
   - `ltl.Impl.User` -> this is the default way to identify you
   - `ltl.Impl.DB`
@@ -421,9 +422,9 @@ its bothering me ... maybe i want
   - `ltl.Impl.OS.Volume`
   - `ltl.Impl.OS.Gpu`
   - `ltl.Impl.net`
-  - `ltl.Impl.HQ` - evt queue
-  - `ltl.Impl.PQ` - op queue
-  - `ltl.Impl.RQ` - runner queue
+  - `ltl.Impl.HQ` evt queue
+  - `ltl.Impl.PQ` op queue
+  - `ltl.Impl.RQ` runner queue
 ### Static
 - `ltl.msg`
   - `ltl.msg(key|code|hash|static).key()`
@@ -438,8 +439,8 @@ its bothering me ... maybe i want
 - `ltl.behaviours()`
 - `ltl.read()`
 - `ltl.flags()`
-- `ltl.run()`
-- `ltl.net()` - uu-mac-id
+- `ltl.run()` turns args into ops, translate
+- `ltl.net()` uu-mac-id
 - `ltl.interfaces()`
 - `ltl.running()`
 - `ltl.op(CODE)` call one operation 
