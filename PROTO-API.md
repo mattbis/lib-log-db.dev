@@ -55,7 +55,7 @@ evt is the base logger of the server, process.. whatever you do it will write.. 
 - `root.spread`
 - `root.logger.evt.path` - set before running if want custom.. but this log is small....
 - `root.heap.path`
-- `root.dump.path`
+- `root.dump.path` - since we are assuming the tests mean it doesnt actually crash - this shuld in ehtory be useful.. 
 - `root.crash_handler.path` - this seems a good idea if you did if yourself .. 
 - `args.verbose` | defaults.verbose - cli messages
 - `args.debug` | defaults.debug - cli messages
